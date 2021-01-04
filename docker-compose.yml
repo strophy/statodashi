@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  dashd:
+    image: dashpay/dashd:0.17.0.0-rc2
+    restart: unless-stopped
+    ports: 
+      - 19999:19999
+    command:
+      - dashd
+    volumes:
+      - /home/strophy/Code/statodashi/dashd.conf:/dash/.dashcore/dash.conf
+  graphite:
+    image: graphiteapp/graphite-statsd
+    restart: always
+    ports:
+      - 80:80
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
