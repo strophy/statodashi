@@ -9,7 +9,7 @@ services:
     command:
       - dashd
     volumes:
-      - /home/strophy/Code/statodashi/dashd.conf:/dash/.dashcore/dash.conf
+      - "./dashd.conf:/dash/.dashcore/dash.conf"
   graphite:
     image: graphiteapp/graphite-statsd
     restart: always
@@ -19,3 +19,5 @@ services:
     image: grafana/grafana
     ports:
       - 3000:3000
+    volumes:
+      - "./grafana.ini:/etc/grafana/grafana.ini"
