@@ -15,9 +15,20 @@ services:
     restart: always
     ports:
       - 3000:80
+    volumes:
+      - graphite-configs:/opt/graphite/conf
+      - graphite-storage:/opt/graphite/storage
+      - statsd-config:/opt/statsd/config
   grafana:
     image: grafana/grafana
     ports:
       - 80:3000
     volumes:
       - "./grafana.ini:/etc/grafana/grafana.ini"
+      - "grafana-storage:/var/lib/grafana"
+
+volumes:
+  grafana-storage:
+  graphite-configs:
+  graphite-storage:
+  statsd-config:
