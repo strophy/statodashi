@@ -16,7 +16,8 @@ services:
     ports:
       - 3000:80
     volumes:
-      - "graphite-configs:/opt/graphite/conf"
+      - "./storage-schemas.conf:/opt/graphite/conf/storage-schemas.conf"
+      - "./storage-aggregation.conf:/opt/graphite/conf/storage-aggregation.conf"
       - "graphite-storage:/opt/graphite/storage"
       - "statsd-config:/opt/statsd/config"
   grafana:
@@ -31,6 +32,5 @@ services:
 
 volumes:
   grafana-storage:
-  graphite-configs:
   graphite-storage:
   statsd-config:
