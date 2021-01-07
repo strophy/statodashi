@@ -26,6 +26,7 @@ services:
     volumes:
       - "./grafana.ini:/etc/grafana/grafana.ini"
       - "./blue-d.svg:/usr/share/grafana/public/img/grafana_icon.svg"
+      - "./home.json:/usr/share/grafana/public/dashboards/home.json"
       - "grafana-storage:/var/lib/grafana"
 
 volumes:
