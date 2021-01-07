@@ -16,9 +16,9 @@ services:
     ports:
       - 3000:80
     volumes:
-      - graphite-configs:/opt/graphite/conf
-      - graphite-storage:/opt/graphite/storage
-      - statsd-config:/opt/statsd/config
+      - "graphite-configs:/opt/graphite/conf"
+      - "graphite-storage:/opt/graphite/storage"
+      - "statsd-config:/opt/statsd/config"
   grafana:
     image: grafana/grafana
     ports:
