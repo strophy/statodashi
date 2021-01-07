@@ -14,10 +14,10 @@ services:
     image: graphiteapp/graphite-statsd
     restart: always
     ports:
-      - 80:80
+      - 3000:80
   grafana:
     image: grafana/grafana
     ports:
-      - 3000:3000
+      - 80:3000
     volumes:
       - "./grafana.ini:/etc/grafana/grafana.ini"
